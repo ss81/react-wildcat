@@ -1,0 +1,5 @@
+build*
+bundles
+public
+node_modules
+vendor

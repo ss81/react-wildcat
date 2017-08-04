@@ -1,0 +1,52 @@
+{
+    "extends": ["eslint-config-nfl", "prettier"],
+    "env": {
+        "browser": true,
+        "jasmine": true
+    },
+    "globals": {
+        "$": true,
+        "$$": true,
+        "browser": true,
+        "by": true,
+        "element": true,
+        "protractor": true
+    },
+    "plugins": [
+        "prettier"
+    ],
+    "rules": {
+        "prettier/prettier": ["error", {
+            printWidth: 80,
+            tabWidth: 4,
+            singleQuote: false,
+            trailingComma: "none",
+            bracketSpacing: false,
+            semi: true,
+            useTabs: false,
+            parser: "babylon",
+            jsxBracketSameLine: false
+        }]
+    },
+    "settings": {
+        "import/ignore": [
+            "node_modules",
+            ".(scss|less|css)$",
+            ".[^js(x)?]+$"
+        ],
+        "import/resolve": {
+            "moduleDirectory": [
+                "node_modules"
+            ]
+        },
+        "import/resolver": {
+            "node": {
+                "extensions": [],
+                "moduleDirectory": "node_modules"
+            },
+            "babel-module": {
+                "root": ["./src"]
+            }
+        }
+    }
+}

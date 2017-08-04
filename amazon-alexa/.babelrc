@@ -1,0 +1,55 @@
+{
+    "env": {
+        "development": {
+            "plugins": [
+                "react-hot-loader/babel",
+                "flow-runtime"
+            ]
+        },
+        "production": {
+            "presets": [
+                "react-optimize"
+            ],
+            "sourceMaps": false
+        },
+        "test": {
+            "plugins": [
+                ["istanbul", {
+                    "exclude": [
+                        "**/node_modules/**",
+                        "**/packages/**",
+                        "**/test/**",
+                        "**/Test*"
+                    ]
+                }],
+                "dynamic-import-node"
+            ],
+            "sourceMaps": "inline"
+        }
+    },
+    "plugins": [
+        ["module-resolver", {
+            "root": ["./src"]
+        }],
+        "transform-decorators-legacy",
+        "transform-inline-environment-variables",
+        "transform-export-extensions",
+        "transform-class-properties",
+        "transform-object-rest-spread",
+        "transform-remove-strict-mode",
+        "syntax-dynamic-import"
+    ],
+    "presets": [
+        ["env", {
+            "targets": {
+                "browsers": ["last 1 versions", "ie >= 11"]
+            },
+            "modules": false,
+            "loose": true,
+            "useBuiltIns": true
+        }],
+        "react",
+        "es2015"
+    ],
+    "sourceMaps": "inline"
+}
